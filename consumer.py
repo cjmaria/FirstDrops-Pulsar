@@ -2,15 +2,15 @@ import pulsar
 import sys
 import json
 
-WORD_COUNT_TOPIC = 'wordcount'
+TOPIC = 'messagecount'
 SUBSCRIPTION = 'my-sub'
 TIMEOUT = 10000
 
 def main(args):
     # Create a pulsar client instance with reference to the broker
-    client = pulsar.Client('pulsar://54.91.38.69:6650')
+    client = pulsar.Client('pulsar://localhost:6650')
 
-    consumer = client.subscribe(WORD_COUNT_TOPIC, SUBSCRIPTION)
+    consumer = client.subscribe(TOPIC, SUBSCRIPTION)
     while True:
         try:
             # try and receive messages with a timeout of 10 seconds

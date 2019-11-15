@@ -91,7 +91,7 @@ If your output looks something like that, then the sandbox is working! That mean
 ## Get the current function status
 
 ```bash
-curl http://localhost:8080/admin/v2/functions/public/default/wordcount/status
+curl http://localhost:8080/admin/v2/functions/public/default/messagecount/status
 
 {
   "functionStatusList": [{

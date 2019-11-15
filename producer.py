@@ -4,7 +4,7 @@ from random import randint
 from time import sleep
 import sys
 
-SENTENCES_TOPIC = 'sentences'
+TOPIC = 'messages'
 
 # This iterates continuously through a list sequence in random order
 def random_cycle(ls):
@@ -16,10 +16,10 @@ def random_cycle(ls):
 
 def main(args):
     # Create a pulsar client instance with reference to the broker
-    client = pulsar.Client('pulsar://54.91.38.69:6650')
+    client = pulsar.Client('pulsar://localhost:6650')
 
     # Build a producer instance on a specific topic
-    producer = client.create_producer(SENTENCES_TOPIC)
+    producer = client.create_producer(TOPIC)
 
      # Collection of sentences to serve as random input sequence
     sentences = random_cycle([

@@ -3,9 +3,9 @@ package com.mobius.datascience.functions;
 import org.apache.pulsar.functions.api.Context;
 import org.apache.pulsar.functions.api.Function;
 
-public class WordCount implements Function<String, Void> {
+public class MessageCount implements Function<String, Void> {
 
-    private static final String PUBLISH_TOPIC = "persistent://public/default/wordcount";
+    private static final String PUBLISH_TOPIC = "persistent://public/default/messagecount";
 
     private static final long PUBLISH_INTERVAL = 500;
 
