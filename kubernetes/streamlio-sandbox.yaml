@@ -1,0 +1,25 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: firstdrops-pulsar
+spec:
+  selector:
+    matchLabels:
+      app: firstdrops-pulsar
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: firstdrops-pulsar
+    spec:
+      containers:
+      - name: firstdrops-pulsar
+        image: firstdrops-pulsar:latest
+        ports:
+        - containerPort: 6650
+          name: pulsar-broker
+        - containerPort: 8080
+          name: pulsar-admin
+        - containerPort: 8000
+          name: pulsar-ui
