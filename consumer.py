@@ -2,7 +2,7 @@ import pulsar
 import sys
 import json
 
-TOPIC = 'messagecount'
+TOPIC = 'messagecountappended'
 SUBSCRIPTION = 'my-sub'
 TIMEOUT = 10000
 
