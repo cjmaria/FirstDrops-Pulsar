@@ -29,7 +29,7 @@ def main(args):
     count = 0
     for sentence in sentences:
         count += 1
-        sleep(0.01)  # Throttle messages with a 10 ms delay
+        sleep(0.001)  # Throttle messages with a 1 ms delay
         print('Sending sentence: %d' % count)
         producer.send(sentence.encode('utf-8')) # Publish randomly selected sentence to Pulsar
 
