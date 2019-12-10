@@ -46,47 +46,6 @@ As you can see, the image requires several open ports. The table below examples 
 | Pulsar Admin     | 8080          | 8080                  |
 | Pulsar UI        | 8000          | 8000                  |
 
-## Run the producer and consumer scripts
-
-There are two Python scripts in the sandbox that act as a Pulsar producer and consumer, respectively.
-```
-
-If the Docker image is currently running, start up the consumer (just make sure to wait a few seconds after you've started up the Docker image):
-
-```bash
-$ python consumer.py
-```
-
-> If you get an error along the lines of `Exception: Pulsar error: ConnectError`, try waiting a few seconds and retrying. If that doesn't work, run `docker ps` to check on the status of the running image.
-
-Initially, no messages will be published to the topic that the consumer is listening on. This will change when you start up the producer:
-
-```bash
-$ python producer.py
-```
-
-Once you start up the producer, you should begin to see messages like this via the consumer:
-
-```
-Received message:  {"a": 273,"ago": 273,"am": 273,"an": 273,"and": 547,"apple": 273,"at": 273,"away": 273,"cow": 274,"day": 273,"doctor": 273,"dwarfs": 274,"four": 273,"i": 273,"jumped": 274,"keeps": 273,"moon": 274,"nature": 273,"over": 274,"score": 273,"seven": 547,"snow": 274,"the": 1095,"two": 273,"white": 274,"with": 273,"years": 273}
-Received message:  {"a": 284,"ago": 284,"am": 283,"an": 284,"and": 568,"apple": 284,"at": 283,"away": 284,"cow": 283,"day": 284,"doctor": 284,"dwarfs": 284,"four": 284,"i": 283,"jumped": 283,"keeps": 284,"moon": 283,"nature": 283,"over": 283,"score": 284,"seven": 568,"snow": 284,"the": 1134,"two": 283,"white": 284,"with": 283,"years": 284}
-Received message:  {"a": 294,"ago": 294,"am": 293,"an": 294,"and": 588,"apple": 294,"at": 293,"away": 294,"cow": 294,"day": 294,"doctor": 294,"dwarfs": 294,"four": 294,"i": 293,"jumped": 294,"keeps": 294,"moon": 294,"nature": 293,"over": 294,"score": 294,"seven": 588,"snow": 294,"the": 1176,"two": 293,"white": 294,"with": 293,"years": 294}
-Received message:  {"a": 304,"ago": 304,"am": 303,"an": 304,"and": 608,"apple": 304,"at": 303,"away": 304,"cow": 305,"day": 304,"doctor": 304,"dwarfs": 304,"four": 304,"i": 303,"jumped": 305,"keeps": 304,"moon": 305,"nature": 303,"over": 305,"score": 304,"seven": 608,"snow": 304,"the": 1218,"two": 303,"white": 304,"with": 303,"years": 304}
-```
-
-The producer, in turn, should be producing output like this:
-
-```
-Sending message - four score and seven years ago
-Sending message - i am at two with nature
-Sending message - i am at two with nature
-Sending message - four score and seven years ago
-Sending message - an apple a day keeps the doctor away
-Sending message - the cow jumped over the moon
-Sending message - snow white and the seven dwarfs
-```
-
-If your output looks something like that, then the sandbox is working! That means that you now have an end-to-end, real-time, stateful processing platform powered by Apache Pulsar, Pulsar functions, and Apache BookKeeper running on your laptop.
 
 ## Get the current function status
 

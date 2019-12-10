@@ -1,0 +1,9 @@
+version: '3'
+services:
+  pulsar:
+    image: "firstdrops-pulsar:latest"
+    ports:
+      - "6650:6650"
+      - "8080:8080"
+      - "8000:8000"
+

@@ -4,3 +4,80 @@ target/
 *.pyc
 *.jar
 **/.DS_Store
+
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, build with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+out/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Eclipse
+.classpath
+.project
+.settings/
+.recommenders/
+
+# Mac
+.DS_Store
+
+# Gradle
+.gradle
+
+# NodeJs
+node_modules/
+package-lock.json
+
+# Yarn
+yarn.lock
+yarn-error.log
+
+.vscode/
+
+testdb
+build/
+*.db
+front-end/data/
+*.log
+*.gz
+dbdata
+src/main/resources/local.properties
+
+*.key
+
+.DS_Store
+node_modules/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+**/*.log
+
+test/unit/coverage
+test/e2e/reports
+selenium-debug.log
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+package-lock.json
+
+integration-test/report
+integration-test/*.log

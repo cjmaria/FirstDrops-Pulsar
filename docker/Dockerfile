@@ -1,6 +1,6 @@
-FROM openjdk:11-jre
+FROM openjdk:8-jre
 
-ARG pulsar_version=2.4.1
+ARG pulsar_version=2.4.2
 
 # Install some utilities
 RUN apt-get update && \
@@ -53,7 +53,7 @@ RUN pip install pulsar-client protobuf futures grpcio grpcio-tools
 COPY mobius.conf /etc/supervisor/conf.d/
 COPY apply-config-from-env.py /pulsar/bin
 
-# Copy examples function jar
+# Copy function jar
 COPY firstdrops-pulsar-latest.jar /components/
 
 # Settings for lower memory consumption
@@ -70,5 +70,10 @@ ENV dbStorage_rocksDB_blockCacheSize=16777216
 ENV dbStorage_rocksDB_writeBufferSizeMB=8
 ENV statsProviderClass org.apache.bookkeeper.stats.PrometheusMetricsProvider
 ENV prometheusStatsHttpPort 8001
+
+EXPOSE 8080
+EXPOSE 6650
+
+
 
 ENTRYPOINT ["supervisord", "-n"]
